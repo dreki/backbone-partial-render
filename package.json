@@ -1,0 +1,25 @@
+{
+  "name": "backbone-partial-render",
+  "version": "1.0.0",
+  "description": "React-style View rendering for Backbone",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dreki/backbone-partial-render.git"
+  },
+  "keywords": [
+    "backbone",
+    "partial",
+    "render",
+    "react"
+  ],
+  "author": "Sean Gilbertson",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dreki/backbone-partial-render/issues"
+  },
+  "homepage": "https://github.com/dreki/backbone-partial-render#readme"
+}
