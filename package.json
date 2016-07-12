@@ -1,6 +1,6 @@
 {
   "name": "backbone-partial-render",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "React-style View rendering for Backbone",
   "main": "index.js",
   "scripts": {
@@ -25,5 +25,10 @@
   "homepage": "https://github.com/dreki/backbone-partial-render#readme",
   "devDependencies": {
     "webpack": "^1.13.1"
+  },
+  "dependencies": {
+    "backbone": "^1.3.3",
+    "jquery": "^3.1.0",
+    "lodash": "^4.13.1"
   }
 }
