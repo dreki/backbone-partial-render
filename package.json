@@ -4,7 +4,8 @@
   "description": "React-style View rendering for Backbone",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dist": "mkdir -p dist && node_modules/webpack/bin/webpack.js index.js dist/backbone-partial-render.js"
   },
   "repository": {
     "type": "git",
@@ -21,5 +22,8 @@
   "bugs": {
     "url": "https://github.com/dreki/backbone-partial-render/issues"
   },
-  "homepage": "https://github.com/dreki/backbone-partial-render#readme"
+  "homepage": "https://github.com/dreki/backbone-partial-render#readme",
+  "devDependencies": {
+    "webpack": "^1.13.1"
+  }
 }
