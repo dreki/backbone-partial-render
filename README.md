@@ -33,11 +33,9 @@ Your page:
 Your JS:
 ```js
 var PartialViewUpdateMixin = require('backbone-partial-render');
-
-function status(msg) {
-  $('.js-status').text(msg);
-}
-status('loaded');
+var $ = require('jquery');
+var Backbone = require('backbone');
+var _ = require('lodash');
 
 var Book = Backbone.Model.extend({
   defaults: {
@@ -62,12 +60,14 @@ var BookView = Backbone.View.extend({
   },
   _setTitle: function() {
     this.model.set('title', this.$('.js-title-text').val());
-    console.log(this.$('.js-status'));
   },
   _setImage: function() {
     this.$('.js-image').attr('src', 'http://assets.inhabitat.com/wp-content/blogs.dir/1/files/2014/07/true-cost-of-cheeseburger.jpg');
   },
   render: function() {
+    // --------------------------------------
+    // NOTE: This is where the magic happens
+    // --------------------------------------
     this.renderByPatching({ignore: ['.js-image']});
   }
 });
@@ -80,7 +80,11 @@ $(function() {
 
 ```
 
-Now you can render all the books you want _and_ look at delectable cheeseburgers at the same time.
+Now you can render all the books you want _and_ look at delectable
+cheeseburgers at the same time.
+
+Additionally, your form inputs won't be ruined and input focus will be
+unaffected.
 
 ## pull requests
 
