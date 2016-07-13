@@ -2,7 +2,9 @@
 
 This package allows you to render your Backbone Views by updating the
 View's DOM rather than completely replacing it every time you
-`render`. This is similar to how React renders HTML.
+`render`. This is similar to how React renders HTML. You can also have
+Backbone leave custom rendering that happens outside `render` in
+place.
 
 ## Install
 
