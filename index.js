@@ -24,7 +24,11 @@ var PartialViewUpdateMixin = {
       ignore = config.ignore;
     }
     var $updated = $(this.el.cloneNode(true));
-    $updated.html(this.template(this.model.attributes));
+    var attrs = {};
+    if (this.model) {
+      attrs = this.model.attributes;
+    }
+    $updated.html(this.template(attrs));
     var diff = this._diffdom.diff(this.$el[0], $updated[0]);
     var toDelete = [];
     _.each(diff, function(item) {
