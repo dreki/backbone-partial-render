@@ -19,7 +19,10 @@ var PartialViewUpdateMixin = {
    * rendering.
    */
   renderByPatching: function(config) {
-    var ignore = config.ignore || [];
+    var ignore = [];
+    if (config && config.ignore) {
+      ignore = config.ignore;
+    }
     var $updated = $(this.el.cloneNode(true));
     $updated.html(this.template(this.model.attributes));
     var diff = this._diffdom.diff(this.$el[0], $updated[0]);
