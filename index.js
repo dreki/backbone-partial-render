@@ -16,19 +16,19 @@ var PartialViewUpdateMixin = {
    *
    * @param {{ignore: String[]}} config - (optional) ignore: array of
    * selectors for elements to be ignored (not overwritten) when
-   * rendering.
+   * rendering. data: Data to use for rendering. Defaults to `this.model.attributes`
    */
   renderByPatching: function(config) {
+    var data = this.model.attributes;
+    if (config && config.data) {
+      data = config.data;
+    }
     var ignore = [];
     if (config && config.ignore) {
       ignore = config.ignore;
     }
     var $updated = $(this.el.cloneNode(true));
-    var attrs = {};
-    if (this.model) {
-      attrs = this.model.attributes;
-    }
-    $updated.html(this.template(attrs));
+    $updated.html(this.template(data));
     var diff = this._diffdom.diff(this.$el[0], $updated[0]);
     var toDelete = [];
     _.each(diff, function(item) {

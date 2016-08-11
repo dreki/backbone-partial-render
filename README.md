@@ -71,6 +71,8 @@ var BookView = Backbone.View.extend({
     // NOTE: This is where the magic happens
     // --------------------------------------
     this.renderByPatching({ignore: ['.js-image']});
+    
+    // or: this.renderByPatching({data: {a: '1', b: '2'}}). See "options" below.
   }
 });
 _.extend(BookView.prototype, PartialViewUpdateMixin);
@@ -87,6 +89,10 @@ cheeseburgers at the same time.
 
 Additionally, your form inputs won't be ruined and input focus will be
 unaffected.
+
+## options
+
+- **`renderByPatching`** by default passes **`this.model.attributes`** to the template when rendering. You can **override** this by passing a `data` parameter. For example: **`renderByPatching({data: this.serialize()})`**.  
 
 ## pull requests
 
