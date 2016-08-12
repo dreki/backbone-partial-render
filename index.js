@@ -32,7 +32,7 @@ var PartialViewUpdateMixin = {
     var diff = this._diffdom.diff(this.$el[0], $updated[0]);
     var toDelete = [];
     _.each(diff, function(item) {
-      var el = this._diffdom.getFromRoute($updated[0], item.route);
+      var el = this._diffdom.getFromRoute(this.el, item.route);
       _.each(ignore, function (selector) {
         if ($(el).is(selector)) {
           toDelete.push(item.route);
